@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the English Word</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-abc123" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="toggle-container">
+        <button id="dark-mode-toggle" class="toggle-button">
+            <i id="toggle-icon" class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h3 class="word-label">Translate the word:</h3>
+            <h2 id="question" class="word"></h2>
+            <input type="text" id="answer" placeholder="Enter your answer">
+            <button id="submit">Submit</button>
+            <p id="result" class="result"></p>
+        </div>
+    </div>
+</body>
+</html>
