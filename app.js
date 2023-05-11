@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
 
     //UNITS:
     const u1a = [
@@ -122,7 +122,7 @@
 
     const words = u3b;
         
-
+    const skippedWords = [];
 
     const questionElement = document.getElementById('question');
     const answerElement = document.getElementById('answer');
@@ -187,4 +187,5 @@
 
     displayWord();
     submitButton.addEventListener('click', checkAnswer);
+    questionElement.addEventListener('click', displayWord)
 });
