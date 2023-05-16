@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', function () {
             resultElement.innerHTML = '<i class="fas fa-question"></i> Grammar mistake';
             resultElement.classList.add('minor-mistake');
         } else {
-            resultElement.innerHTML = '<i class="fas fa-times"></i> Incorrect.';
+            resultElement.innerHTML = '<i class="fas fa-times"></i> Incorrect. Correct is '+correctAnswer;
             resultElement.classList.add('incorrect');
         }
 
