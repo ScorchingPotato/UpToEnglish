@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
         questionElement.innerText = currentWord.lithuanian;
         resultElement.innerHTML = '';
         resultElement.classList.remove('correct', 'incorrect', 'minor-mistake');
-        unitElement.innerHTML = unitnames[ui];
+        unitElement.innerHTML = 'unit '+unitnames[ui];
     }
 
     function checkAnswer() {
