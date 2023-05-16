@@ -70,19 +70,6 @@ body {
 }
 
 
-/* Rest of the styles */
-
-.unit-selection {
-    margin-bottom: 10px;
-}
-
-    .unit-selection label {
-        font-weight: bold;
-    }
-
-    .unit-selection select {
-        padding: 5px;
-    }
 
 @keyframes highlight {
     25% {
@@ -95,15 +82,6 @@ body {
     75% {
         color: #622bd9;
     }
-}
-    
-
-.card-header {
-    background-color: #2b3e50;
-    color: #ffffff;
-    padding: 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
 .card-body {
@@ -181,3 +159,27 @@ h1 {
 }
 
 
+.rightarrow {
+
+}
+
+.leftarrow {
+    position: fixed;
+    top: 30vh;
+    left: 20vw;
+}
+
+.rightarrow {
+    position: fixed;
+    top: 30vh;
+    right: 20vw;
+}
+
+.arrow {
+    font-size: 20vh;
+    color: #9e9e9e;
+}
+
+.arrow:hover {
+    cursor: pointer;
+}
