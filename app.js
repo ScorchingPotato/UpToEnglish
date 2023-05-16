@@ -120,10 +120,11 @@ document.addEventListener('DOMContentLoaded', function () {
         { lithuanian: "vilna", english: "wool" }
     ];
 
-    const words = u3b;
-        
-    const skippedWords = [];
+    const units = [u1a, u3b]
+    const unitnames = ['1a', '3b'];
 
+
+    var ui = 1;
     const questionElement = document.getElementById('question');
     const answerElement = document.getElementById('answer');
     const submitButton = document.getElementById('submit');
@@ -135,6 +136,17 @@ document.addEventListener('DOMContentLoaded', function () {
     const card = document.querySelector('.card');
     const container = document.querySelector(".container");
     const toggleIcon = document.getElementById('toggle-icon');
+    const leftarrow = document.getElementById('larrow');
+    const rightarrow = document.getElementById('rarrow');
+    const unitElement = document.getElementById('unit');
+
+    function setUnit() {
+        //unitElement.innerHTML = ui;
+        console.log(ui)
+    }
+
+    leftarrow.addEventListener('click', scrollleft)
+    rightarrow.addEventListener('click', scrollright)
 
     darkModeToggle.addEventListener('click', function () {
         body.classList.toggle('dark-mode');
@@ -143,7 +155,25 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleIcon.classList.toggle('fa-sun');
     });
 
+    function scrollleft() {
+        if (ui > 0) {
+            ui = ui - 1
+        }
+        setUnit()
+        displayWord()
+    }
+
+    function scrollright() {
+        if (ui < units.length-1) {
+            ui = ui + 1
+        }
+        setUnit()
+        displayWord()
+        unitElement.innerHTML = unitnames[ui];
+    }
+
     function getRandomWord() {
+        words = units[ui];
         return words[Math.floor(Math.random() * words.length)];
     }
 
@@ -152,6 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
         questionElement.innerText = currentWord.lithuanian;
         resultElement.innerHTML = '';
         resultElement.classList.remove('correct', 'incorrect', 'minor-mistake');
+        unitElement.innerHTML = unitnames[ui];
     }
 
     function checkAnswer() {
