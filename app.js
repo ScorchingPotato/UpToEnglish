@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const unitnames = ['On Screen 1, 1a', 'On Screen 2, 3b','On Screen 3, 3a','On Screen 3, 3b'];
 
 
-    var ui = 0;
+    var ui = 3;
     const questionElement = document.getElementById('question');
     const answerElement = document.getElementById('answer');
     const submitButton = document.getElementById('submit');
@@ -263,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function scrollright() {
-        if (ui < units.length+1) {
+        if (ui) {
             ui = ui + 1
         }
         setUnit()
