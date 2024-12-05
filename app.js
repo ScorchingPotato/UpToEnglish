@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     //UNITS:
-    const u1a = [
+    const OS1u1a = [
         { lithuanian: "nuostabus, nepaprastas", english: "amazing" },
         { lithuanian: "išvaizda", english: "appearance" },
         { lithuanian: "jaustis patogiai su kitais", english: "be comfortable with others" },
@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { lithuanian: "stiprus", english: "strong" },
     ]
 
-    u3b = [
-        { lithuanian: "pyktas", english: "angry" },
+    OS2u3b = [
+        { lithuanian: "piktas", english: "angry" },
         { lithuanian: "apsmukęs", english: "baggy" },
         { lithuanian: "būti išsigandusiam", english: "be frightened of something" },
         { lithuanian: "būti patenkintam", english: "be satisfied with something" },
@@ -119,9 +119,37 @@ document.addEventListener('DOMContentLoaded', function () {
         { lithuanian: "šilkas", english: "silk" },
         { lithuanian: "vilna", english: "wool" }
     ];
+    const OS3u3a = [
+        { lithuanian: "palikti", english: "abandon" },
+        { lithuanian: "pasiekimas", english: "achievment" },
+        { lithuanian: "susirūpinęs", english: "anxious about" },
+        { lithuanian: "atvykti", english: "arrive" },
+        { lithuanian: "pastangos", english: "attempt" },
+        { lithuanian: "drąsa", english: "bravery" },
+        { lithuanian: "iššūkis", english: "challenge" },
+        { lithuanian: "vilkimas", english: "drag" },
+        { lithuanian: "įranga", english: "equipment" },
+        { lithuanian: "tyrinėtojas", english: "explorer" },
+        { lithuanian: "tyrinėtojų grupės narys", english: "expedition member" },
+        { lithuanian: "veidas", english: "face" },
+        { lithuanian: "baimė", english: "fear" },
+        { lithuanian: "pirmas", english: "first" },
+        { lithuanian: "laisvas", english: "free" },
+        { lithuanian: "draugiškas", english: "friendly" },
+        { lithuanian: "užšalęs", english: "frozen" },
+        { lithuanian: "hipodromas", english: "hippodrome" },
+        { lithuanian: "ledas", english: "ice" },
+        { lithuanian: "ledinis", english: "icy" },
+        { lithuanian: "įprastas", english: "ordinary" },
+        { lithuanian: "poliarinis", english: "polar" },
+        { lithuanian: "rogės", english: "sledge" },
+        { lithuanian: "stipriai įsiminti", english: "strongly freeze to mind" },
+        { lithuanian: "atsargos", english: "supplies" },
+        { lithuanian: "neįprastas", english: "unusual" }
+        ];
 
-    const units = [u1a, u3b]
-    const unitnames = ['1a', '3b'];
+    const units = [OS1u1a, OS2u3b, OS3u3a]
+    const unitnames = ['On Screen 1, 1a', 'On Screen 2, 3b','On Screen 3, 3a'];
 
 
     var ui = 1;
@@ -182,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
         questionElement.innerText = currentWord.lithuanian;
         resultElement.innerHTML = '';
         resultElement.classList.remove('correct', 'incorrect', 'minor-mistake');
-        unitElement.innerHTML = 'unit '+unitnames[ui];
+        unitElement.innerHTML = unitnames[ui];
     }
 
     function checkAnswer() {
