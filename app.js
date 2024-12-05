@@ -189,6 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         setUnit()
         displayWord()
+        unitElement.innerHTML = unitnames[ui];
     }
 
     function scrollright() {
@@ -218,13 +219,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const correctAnswer = currentWord.english.toLowerCase();
 
         if (userAnswer === correctAnswer) {
-            resultElement.innerHTML = '<i class="fas fa-check"></i> Correct!';
+            resultElement.innerHTML = '<span class="material-symbols-outlined">check</span> Correct!';
             resultElement.classList.add('correct');
         } else if (userAnswer.length === correctAnswer.length && isMinorMistake(userAnswer, correctAnswer)) {
-            resultElement.innerHTML = '<i class="fas fa-question"></i> Grammar mistake';
+            resultElement.innerHTML = '<span class="material-symbols-outlined">question_mark</span> Grammar mistake';
             resultElement.classList.add('minor-mistake');
         } else {
-            resultElement.innerHTML = '<i class="fas fa-times"></i> Incorrect. Correct is '+correctAnswer;
+            resultElement.innerHTML = '<span class="material-symbols-outlined">close</span> Incorrect. Correct is '+correctAnswer;
             resultElement.classList.add('incorrect');
         }
 
