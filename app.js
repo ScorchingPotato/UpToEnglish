@@ -147,9 +147,79 @@ document.addEventListener('DOMContentLoaded', function () {
         { lithuanian: "atsargos", english: "supplies" },
         { lithuanian: "neįprastas", english: "unusual" }
         ];
+        const OS3u3b = [
+            { lithuanian: "alergija", english: "allergy" },
+            { lithuanian: "nustebęs", english: "amazed" },
+            { lithuanian: "rašyti prašymą dėl darbo", english: "apply" },
+            { lithuanian: "derėtis", english: "bargain" },
+            { lithuanian: "susidurti", english: "be faced (with)" },
+            { lithuanian: "už(si)sakyti (vietą viešbutyje, stalą restorane), pirkti", english: "book" },
+            { lithuanian: "skolintis", english: "borrow" },
+            { lithuanian: "už(si)registruoti (pvz., į viešbutį)", english: "check in" },
+            { lithuanian: "kopti, lipti", english: "climb" },
+            { lithuanian: "nuspręsti, nutarti", english: "decide" },
+            { lithuanian: "įgyti (savybę, įprotį)", english: "develop" },
+            { lithuanian: "entuziazmo/energijos", english: "enthusiastic" },
+            { lithuanian: "pralenkti, pranokti", english: "excel (at)" },
+            { lithuanian: "patirti", english: "experience" },
+            { lithuanian: "tirti, tyrinėti", english: "explore" },
+            { lithuanian: "karštis", english: "fever" },
+            { lithuanian: "įkvėptas", english: "inspired" },
+            { lithuanian: "sužinoti", english: "find out" },
+            { lithuanian: "skristi", english: "fly" },
+            { lithuanian: "įdegti/nudegti saulėje", english: "get sunburnt" },
+            { lithuanian: "liautis", english: "give up" },
+            { lithuanian: "tapti (draugijos ir pan.) nariu, prisijungti", english: "join (in)" },
+            { lithuanian: "kelionė", english: "journey" },
+            { lithuanian: "tęstis", english: "last" },
+            { lithuanian: "sužinoti", english: "learn (about sth)" },
+            { lithuanian: "baigti mokyklą", english: "leave school" },
+            { lithuanian: "paskolinti", english: "lend" },
+            { lithuanian: "leisti", english: "let" },
+            { lithuanian: "siūlyti", english: "offer" },
+            { lithuanian: "besididžiuojantis", english: "proud of" },
+            { lithuanian: "atidėti", english: "put off" },
+            { lithuanian: "už(si)dėti, apsirengti, apsivilkti, užsimauti", english: "put on" },
+            { lithuanian: "surinkti pinigų", english: "raise money" },
+            { lithuanian: "išbėrimas", english: "rash" },
+            { lithuanian: "nuoma", english: "rent" },
+            { lithuanian: "varvanti nosis", english: "runny nose" },
+            { lithuanian: "patenkintas", english: "satisfied with" },
+            { lithuanian: "pasitikėjimas savimi", english: "self-confidence" },
+            { lithuanian: "(pra)leisti", english: "spend" },
+            { lithuanian: "pilvo diegliai", english: "stomach cramp" },
+            { lithuanian: "pasisekti", english: "succeed (in)" },
+            { lithuanian: "pasiimti metus akademinių atostogų universitete", english: "take a year out" },
+            { lithuanian: "kelionė, išvyka", english: "trip" },
+            { lithuanian: "būti savanoriu", english: "volunteer" },
+            { lithuanian: "kelionė (jūra)", english: "voyage" },
+            { lithuanian: "viešbučio užsakymas", english: "Booking a hotel" },
+            { lithuanian: "atvykimas", english: "arrival" },
+            { lithuanian: "užsiregistruoti", english: "check in" },
+            { lithuanian: "patvirtinti", english: "confirm" },
+            { lithuanian: "data, (mėnesio) diena", english: "date" },
+            { lithuanian: "dvigulė lova", english: "double bed" },
+            { lithuanian: "prijungtas", english: "en-suite" },
+            { lithuanian: "išankstinis užsakymas (vietų viešbutyje ir pan.)", english: "reservation" },
+            { lithuanian: "viengulė lova", english: "single bed" },
+            { lithuanian: "vienvietis kambarys", english: "single room" },
+            { lithuanian: "dvi viengulės lovos", english: "twin beds" },
+            { lithuanian: "dvivietis kambarys", english: "twin room" },
+            { lithuanian: "oro uosto ženklai", english: "Airport signs" },
+            { lithuanian: "atvykimo salė", english: "arrivals hall" },
+            { lithuanian: "bagažo atsiėmimo salė", english: "baggage hall" },
+            { lithuanian: "registracijos vieta (oro uoste)", english: "check-in" },
+            { lithuanian: "valiutos keitykla", english: "currency exchange" },
+            { lithuanian: "muitinė", english: "customs" },
+            { lithuanian: "išvykimo salė", english: "departures" },
+            { lithuanian: "neapmuitinamos prekės", english: "duty free" },
+            { lithuanian: "vartai", english: "gate" },
+            { lithuanian: "informacija", english: "information" },
+            { lithuanian: "pasų kontrolė", english: "passport control" },
+            ];
 
-    const units = [OS1u1a, OS2u3b, OS3u3a]
-    const unitnames = ['On Screen 1, 1a', 'On Screen 2, 3b','On Screen 3, 3a'];
+    const units = [OS1u1a, OS2u3b, OS3u3a,OS3u3b]
+    const unitnames = ['On Screen 1, 1a', 'On Screen 2, 3b','On Screen 3, 3a','On Screen 3, 3b'];
 
 
     var ui = 1;
@@ -217,6 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function checkAnswer() {
         const userAnswer = answerElement.value.trim().toLowerCase();
         const correctAnswer = currentWord.english.toLowerCase();
+        let waittime=1000
 
         if (userAnswer === correctAnswer) {
             resultElement.innerHTML = '<span class="material-symbols-outlined">check</span> Correct!';
@@ -224,15 +295,17 @@ document.addEventListener('DOMContentLoaded', function () {
         } else if (userAnswer.length === correctAnswer.length && isMinorMistake(userAnswer, correctAnswer)) {
             resultElement.innerHTML = '<span class="material-symbols-outlined">question_mark</span> Grammar mistake';
             resultElement.classList.add('minor-mistake');
+            waittime=1500
         } else {
             resultElement.innerHTML = '<span class="material-symbols-outlined">close</span> Incorrect. Correct is '+correctAnswer;
             resultElement.classList.add('incorrect');
+            waittime=2000
         }
 
         answerElement.value = '';
 
         // Delay before displaying the next word
-        setTimeout(displayWord, 1000);
+        setTimeout(displayWord, waittime);
     }
 
     function isMinorMistake(userAnswer, correctAnswer) {
