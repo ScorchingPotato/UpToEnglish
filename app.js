@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function scrollright() {
-        if (ui < units.length-1) {
+        if (ui < units.length) {
             ui = ui + 1
         }
         setUnit()
