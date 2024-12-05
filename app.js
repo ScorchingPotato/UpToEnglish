@@ -254,14 +254,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function scrollleft() {
-        ui -=1
+        if(ui<units.length){ui -=1}
         setUnit()
         displayWord()
         unitElement.innerHTML = unitnames[ui];
     }
 
     function scrollright() {
-        ui +=1
+        if (ui>0){ui +=1}
         setUnit()
         displayWord()
         unitElement.innerHTML = unitnames[ui];
