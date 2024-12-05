@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { lithuanian: "stiprus", english: "strong" },
     ]
 
-    OS2u3b = [
+    const OS2u3b = [
         { lithuanian: "piktas", english: "angry" },
         { lithuanian: "apsmukęs", english: "baggy" },
         { lithuanian: "būti išsigandusiam", english: "be frightened of something" },
